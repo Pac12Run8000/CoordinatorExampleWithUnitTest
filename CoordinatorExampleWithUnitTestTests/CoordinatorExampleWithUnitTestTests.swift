@@ -1,35 +1,33 @@
-//
-//  CoordinatorExampleWithUnitTestTests.swift
-//  CoordinatorExampleWithUnitTestTests
-//
-//  Created by Norbert Grover on 7/4/24.
-//
-
+import SwiftUI
 import XCTest
+@testable import CoordinatorExampleWithUnitTest
 
-final class CoordinatorExampleWithUnitTestTests: XCTestCase {
+final class CoordinatorExampleWithUnitTests: XCTestCase {
+    var appCoordinator: AppCoordinator!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+        appCoordinator = AppCoordinator()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testInitialViewIsHomeView() {
+        XCTAssertTrue(appCoordinator.currentViewType == HomeView.self, "Initial view is not HomeView")
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testNavigationToDetailsView() {
+        appCoordinator.showDetails()
+        XCTAssertTrue(appCoordinator.currentViewType == DetailsView.self, "Current view is not DetailsView")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    func testNavigationBackToHomeView() {
+        appCoordinator.showDetails()
+        XCTAssertTrue(appCoordinator.currentViewType == DetailsView.self, "Current view is not DetailsView")
+        
+        if appCoordinator.currentViewType == DetailsView.self {
+            appCoordinator.start() // This should navigate back to HomeView
+            XCTAssertTrue(appCoordinator.currentViewType == HomeView.self, "Failed to navigate back to HomeView")
+        } else {
+            XCTFail("Current view is not DetailsView")
         }
     }
-
 }

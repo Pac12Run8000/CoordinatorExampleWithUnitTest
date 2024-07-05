@@ -17,6 +17,7 @@
 		09ECFF682C375626008F6310 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ECFF672C375626008F6310 /* HomeView.swift */; };
 		09ECFF6A2C375645008F6310 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ECFF692C375645008F6310 /* DetailView.swift */; };
 		09ECFF6E2C375779008F6310 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ECFF6D2C375779008F6310 /* Coordinator.swift */; };
+		09ECFF712C379432008F6310 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ECFF702C379432008F6310 /* XCTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		09ECFF672C375626008F6310 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		09ECFF692C375645008F6310 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		09ECFF6D2C375779008F6310 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		09ECFF702C379432008F6310 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09ECFF712C379432008F6310 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				09ECFF492C3749D0008F6310 /* CoordinatorExampleWithUnitTestTests */,
 				09ECFF532C3749D0008F6310 /* CoordinatorExampleWithUnitTestUITests */,
 				09ECFF362C3749CC008F6310 /* Products */,
+				09ECFF6F2C379431008F6310 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +164,14 @@
 				09ECFF6D2C375779008F6310 /* Coordinator.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		09ECFF6F2C379431008F6310 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09ECFF702C379432008F6310 /* XCTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
