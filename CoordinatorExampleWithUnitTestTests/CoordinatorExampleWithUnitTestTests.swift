@@ -9,6 +9,10 @@ final class CoordinatorExampleWithUnitTests: XCTestCase {
         super.setUp()
         appCoordinator = AppCoordinator()
     }
+    override func tearDown() {
+        appCoordinator = nil
+        super.tearDown()
+    }
 
     func testInitialViewIsHomeView() {
         XCTAssertTrue(appCoordinator.currentViewType == HomeView.self, "Initial view is not HomeView")
